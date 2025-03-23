@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIBIL Score Report</title>
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background: #f4f7f9;
+            color: #333;
+            text-align: center;
+        }
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 0;
+        }
+        .email-container {
+            max-width: 600px;
+            background: #ffffff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background: #4c75fe;
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .info-box {
+            background: #f4f7f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .highlight {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e50d8;
+        }
+        .footer {
+            font-size: 14px;
+            color: #7d7d7d;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+            <div class="header">
+                CIBIL Score Report
+            </div>
+
+            <div class="content">
+                <p>Hello <strong>{{template_content.customer_name}}</strong>,</p>
+                <p>Here is your CIBIL score report:</p>
+
+                <div class="info-box">
+                    CIBIL Score: <span class="highlight">{{template_content.cibil_score}}</span>
+                </div>
+                <div class="info-box">
+                    Credit Rating: <span class="highlight">{{template_content.credit_rating}}</span>
+                </div>
+                <div class="info-box">
+                    Eligible Loan Amount: <span class="highlight">₹{{template_content.loan_amount}}</span>
+                </div>
+
+                <p>For more details, please contact us.</p>
+            </div>
+
+            <div class="footer">
+                <p>Need help? Contact us at <a href="voiceopsacp@gmail.com">voiceopsacp@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

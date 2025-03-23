@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Summary & Feedback Request</title>
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background: #f4f7f9;
+            color: #333;
+            text-align: center;
+        }
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 0;
+        }
+        .email-container {
+            max-width: 600px;
+            background: #ffffff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(135deg, #4c75fe, #1e50d8);
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            color: #ffffff;
+        }
+        .summary-box {
+            background: #f4f7f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+            font-size: 14px;
+            color: #444;
+            border-left: 5px solid #4c75fe;
+        }
+        .highlight {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e50d8;
+            line-height: 1.5;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4c75fe, #1e50d8);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(76, 117, 254, 0.4);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #3a5fcc, #163ea5);
+            transform: translateY(-2px);
+        }
+        .footer {
+            font-size: 14px;
+            color: #7d7d7d;
+            margin-top: 30px;
+        }
+        .separator {
+            width: 50px;
+            height: 3px;
+            background: #4c75fe;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+        .download-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f4f7f9;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff8c00, #ff5e00);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+        }
+        .download-btn:hover {
+            background: linear-gradient(135deg, #e07b00, #d14c00);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+            <div class="header">
+                <h1>Call Summary</h1>
+            </div>
+
+            <h2>Hello There!</h2>
+            <p>Thank you for speaking with us! Here’s a quick summary of our conversation:</p>
+
+            <div class="separator"></div>
+
+            <div class="summary-box">
+                <p><strong>📅 Call Date:</strong> {{template_content.call_date}}</p>
+                <p><strong>📌 Summary:</strong></p>
+                <p class="highlight">"{{template_content.call_summary}}"</p>
+                <p><strong>💳 CIBIL Score:</strong> {{template_content.cibil_score}}</p>
+                <p><strong>💳 Type of Loan:</strong> {{template_content.loan_type}}</p>
+                <p><strong>💰 Eligible Loan Amount:</strong> ₹{{template_content.loan_amount}}</p>
+                <p><strong>📧 Email Address:</strong> {{template_content.email_address}}</p>
+            </div>
+
+            <div class="download-box">
+                <p><strong>⬇️ Download Call Recording:</strong></p>
+                <a href="{{template_content.audio_url}}" class="download-btn" download="{{template_content.audio_filename}}">Download Recording</a>
+            </div>
+
+            <p>We’d love to hear your thoughts! How was your experience?</p>
+
+            <a href="{{template_content.feedback_link}}" class="btn">Give Feedback</a>
+
+            <div class="footer">
+                <p>Need further assistance? Contact us at <a href="mailto:voiceopsacp@gmail.com">voiceopsacp@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

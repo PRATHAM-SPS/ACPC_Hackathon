@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your CIBIL Score & Loan Offer</title>
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background: #f4f7f9;
+            color: #333;
+            text-align: center;
+        }
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 0;
+        }
+        .email-container {
+            max-width: 600px;
+            background: #ffffff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(135deg, #4c75fe, #1e50d8);
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            color: #ffffff;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4c75fe, #1e50d8);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(76, 117, 254, 0.4);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #3a5fcc, #163ea5);
+            transform: translateY(-2px);
+        }
+        .footer {
+            font-size: 14px;
+            color: #7d7d7d;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+            <div class="header">
+                <h1>Your Loan Application</h1>
+            </div>
+            <h2>Hello {{template_content.customer_name}},</h2>
+            <p>Your CIBIL score is: <strong>{{template_content.cibil_score}}</strong></p>
+            <p>Based on your score, you are eligible for a loan of ₹{{template_content.loan_amount}}.</p>
+            <p>Your credit rating: <strong>{{template_content.credit_rating}}</strong></p>
+            {{!-- <a href="{{template_content.form_link}}" class="btn">Proceed with Application</a> --}}
+            <div class="footer">
+                <p>Need help? Contact us at <a href="mailto:voiceopsacp@gmail.com">voiceopsacp@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
